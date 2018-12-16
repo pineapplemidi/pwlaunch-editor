@@ -1,5 +1,14 @@
 import React from 'react';
-import { Container, Row, Col, Tooltip, Nav, NavItem, NavLink } from 'reactstrap';
+import {
+  Button,
+  Container,
+  Row,
+  Col,
+  Tooltip,
+  Nav,
+  NavItem,
+  NavLink
+} from 'reactstrap';
 import { Icon } from 'react-icons-kit';
 import { desktop } from 'react-icons-kit/fa/desktop';
 import { github } from 'react-icons-kit/fa/github';
@@ -10,6 +19,8 @@ import react from '../images/icons/react.png';
 import reactstrap from '../images/icons/reactstrap.png';
 import reactIconsKit from '../images/icons/react-icons-kit.png';
 const shell = require('electron').shell;
+
+import Launchpad from './Launchpad.js';
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -43,58 +54,59 @@ export default class Home extends React.Component {
 
   handleClick = (url) => () => {
     shell.openExternal(url);
-  }
-
+  };
   render() {
     return (
       <div>
-        <h1 className='text-center space-top space-bottom'>Start Coding!</h1>
-        <div className='text-center'>
-          <Icon size={64} icon={desktop} />
-        </div>
-        <div className='text-center space-top'>
-          Enjoy developing desktop apps with these technologies
-        </div>
+        <h1 className='text-center space-top space-bottom'>PW Launch</h1>
+        {/*<div className='text-center'>*/}
+          {/*<Icon size={64} icon={desktop} />*/}
+        {/*</div>*/}
+        {/*<div className='text-center space-top'>*/}
+          {/*Enjoy developing desktop apps with these technologies*/}
+        {/*</div>*/}
+
         <Container className='space-top'>
-          <Row>
-            <Col sm='3' className='text-center'>
-              <img style={{ width: 100, height: 100, cursor: 'pointer' }}
-                id='electron'
-                onClick={this.handleClick('https://electronjs.org/')}
-                src={electron} />
-              <Tooltip placement="bottom" isOpen={this.state.tooltips.electron} target="electron" toggle={this.toggle('electron')}>
-                ElectronJS
-              </Tooltip>
-            </Col>
-            <Col sm='3' className='text-center'>
-              <img style={{ width: 100, height: 100, cursor: 'pointer' }}
-                id='react'
-                onClick={this.handleClick('https://reactjs.org/')}
-                src={react} />
-              <Tooltip placement="bottom" isOpen={this.state.tooltips.react} target="react" toggle={this.toggle('react')}>
-                ReactJS
-              </Tooltip>
-            </Col>
-            <Col sm='3' className='text-center'>
-              <img style={{ width: 100, height: 100, cursor: 'pointer' }}
-                id='reactstrap'
-                onClick={this.handleClick('https://reactstrap.github.io/')}
-                src={reactstrap} />
-              <Tooltip placement="bottom" isOpen={this.state.tooltips.reactstrap} target="reactstrap" toggle={this.toggle('reactstrap')}>
-                reactstrap
-              </Tooltip>
-            </Col>
-            <Col sm='3' className='text-center'>
-              <img style={{ width: 100, height: 100, cursor: 'pointer' }}
-                id='reactIconsKit'
-                onClick={this.handleClick('https://wmira.github.io/react-icons-kit/')}
-                src={reactIconsKit} />
-              <Tooltip placement="bottom" isOpen={this.state.tooltips.reactIconsKit} target="reactIconsKit" toggle={this.toggle('reactIconsKit')}>
-                React Icons Kit
-              </Tooltip>
-            </Col>
-          </Row>
-        </Container>,
+        <Launchpad/>
+          {/*<Row>*/}
+            {/*<Col sm='3' className='text-center'>*/}
+              {/*<img style={{ width: 100, height: 100, cursor: 'pointer' }}*/}
+                {/*id='electron'*/}
+                {/*onClick={this.handleClick('https://electronjs.org/')}*/}
+                {/*src={electron} />*/}
+              {/*<Tooltip placement="bottom" isOpen={this.state.tooltips.electron} target="electron" toggle={this.toggle('electron')}>*/}
+                {/*ElectronJS*/}
+              {/*</Tooltip>*/}
+            {/*</Col>*/}
+            {/*<Col sm='3' className='text-center'>*/}
+              {/*<img style={{ width: 100, height: 100, cursor: 'pointer' }}*/}
+                {/*id='react'*/}
+                {/*onClick={this.handleClick('https://reactjs.org/')}*/}
+                {/*src={react} />*/}
+              {/*<Tooltip placement="bottom" isOpen={this.state.tooltips.react} target="react" toggle={this.toggle('react')}>*/}
+                {/*ReactJS*/}
+              {/*</Tooltip>*/}
+            {/*</Col>*/}
+            {/*<Col sm='3' className='text-center'>*/}
+              {/*<img style={{ width: 100, height: 100, cursor: 'pointer' }}*/}
+                {/*id='reactstrap'*/}
+                {/*onClick={this.handleClick('https://reactstrap.github.io/')}*/}
+                {/*src={reactstrap} />*/}
+              {/*<Tooltip placement="bottom" isOpen={this.state.tooltips.reactstrap} target="reactstrap" toggle={this.toggle('reactstrap')}>*/}
+                {/*reactstrap*/}
+              {/*</Tooltip>*/}
+            {/*</Col>*/}
+            {/*<Col sm='3' className='text-center'>*/}
+              {/*<img style={{ width: 100, height: 100, cursor: 'pointer' }}*/}
+                {/*id='reactIconsKit'*/}
+                {/*onClick={this.handleClick('https://wmira.github.io/react-icons-kit/')}*/}
+                {/*src={reactIconsKit} />*/}
+              {/*<Tooltip placement="bottom" isOpen={this.state.tooltips.reactIconsKit} target="reactIconsKit" toggle={this.toggle('reactIconsKit')}>*/}
+                {/*React Icons Kit*/}
+              {/*</Tooltip>*/}
+            {/*</Col>*/}
+          {/*</Row>*/}
+        </Container>
         <Nav className='bottom-bar'>
           <NavItem className='cursor-pointer'>
             <NavLink 
